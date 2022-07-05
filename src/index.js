@@ -1,11 +1,14 @@
+//BOOTSTRAP
+import "bootstrap/dist/css/bootstrap.min.css";
+
+//COMPONENTES
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-//BOOTSTRAP
-import "bootstrap/dist/css/bootstrap.min.css";
+//ESTILOS
+import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

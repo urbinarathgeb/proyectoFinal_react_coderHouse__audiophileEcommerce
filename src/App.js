@@ -1,17 +1,15 @@
-import logo from "./logo.svg";
+//COMPONENTES
+import NavBar from "./components/NavBar/Navbar";
+import ItemListContainer from "./components/containers/ItemListContainer/ItemListContainer";
+
+//ESTILOS
 import "./App.css";
-import Menu from "./components/Menu/Menu";
 
 function App() {
   return (
     <div className="App">
-      <Menu />
-      <header className="App-header">
-        <h1>Hola, Maxi!</h1>
-        <p>
-          Este será un e-commerce de artículos de audio llamado <img src={logo} alt="logo" />
-        </p>
-      </header>
+      <NavBar />
+      <ItemListContainer greeting="Hola, Maxi. Este es el CONTAINER con la prop y este texto es el valor del prop" />
     </div>
   );
 }
