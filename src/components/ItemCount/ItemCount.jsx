@@ -1,13 +1,15 @@
+//BOOTSTRAP
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 
-import { useState } from "react";
+//COMPONENTES
+import React, { useState } from "react";
 
+//ESTILOS
 import "./ItemCount.css";
 
-const ItemCount = ({ initial, stock }) => {
+const ItemCount = ({ initial, stock, product }) => {
   const [count, setCount] = useState(initial);
-  const product = "this.product";
 
   const increaseCount = () => {
     count >= 0 && count < stock && setCount(count + 1);
@@ -27,8 +29,8 @@ const ItemCount = ({ initial, stock }) => {
   };
 
   return (
-    <>
-      <ButtonGroup aria-label="ItemCount" className="mt-5">
+    <div className="itemCount-container mt-3 gap-2">
+      <ButtonGroup aria-label="ItemCount">
         <Button variant="secondary" onClick={decreaseCount}>
           -
         </Button>
@@ -37,10 +39,10 @@ const ItemCount = ({ initial, stock }) => {
           +
         </Button>
       </ButtonGroup>
-      <Button variant="secondary" onClick={onAdd} className="ms-2 mt-5">
+      <Button variant="secondary" onClick={onAdd}>
         Add to cart
       </Button>
-    </>
+    </div>
   );
 };
 

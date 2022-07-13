@@ -1,0 +1,6 @@
+.spinner-container {
+  position: absolute;
+  top: calc(50vh - 30px);
+  width: 60px;
+  height: 60px;
+}
