@@ -4,7 +4,7 @@ import ItemList from "../../ItemList/ItemList";
 import Loading from "../../Loading/Loading";
 
 //ESTILOS
-import "./ItemListContainer.css";
+import "./ItemListContainer.scss";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);

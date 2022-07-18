@@ -1,0 +1,43 @@
+$highlight: #d87d4a;
+$lightTxt: #101010;
+$background: #f1f1f1;
+$lightBg: #fafafa;
+$highlightHover: #fbaf85;
+$darkBgText: #ffffff;
+$leadText: #000000;
+
+.count {
+  &-container {
+    display: flex;
+    width: 60%;
+    height: 38px;
+  }
+  & {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 100%;
+    font-size: .8rem;
+    font-weight: bold;
+    color: $leadText;
+    background-color: $background;
+    
+  }
+  &-btn {
+    width: 30px;
+    height: 38px;
+    font-weight: bold;
+    &:hover {
+      color:$highlight !important;
+    }
+  }
+  &-cart-btn{
+    height: 38px !important;
+    width: 110px !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 0.8125rem !important;
+
+  }
+}

@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import iconCart from "../../assets/icon-cart.svg";
 
 //ESTILOS
-import "./CartWidget.css";
+import "./CartWidget.scss";
 
 function CartWidget() {
   const [show, setShow] = useState(false);

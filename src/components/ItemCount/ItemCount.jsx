@@ -6,7 +6,8 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import React, { useState } from "react";
 
 //ESTILOS
-import "./ItemCount.css";
+import "./ItemCount.scss";
+
 
 const ItemCount = ({ initial, stock, product }) => {
   const [count, setCount] = useState(initial);
@@ -29,18 +30,24 @@ const ItemCount = ({ initial, stock, product }) => {
   };
 
   return (
-    <div className="itemCount-container mt-3 gap-2">
+    <div className="count-container d-flex justify-content-center mt-4 mx-auto gap-2">
       <ButtonGroup aria-label="ItemCount">
-        <Button variant="secondary" onClick={decreaseCount}>
+        <Button variant="info" 
+                className="btn-sm count-btn"
+                onClick={decreaseCount}>
           -
-        </Button>
-        <div className="count-container">{count}</div>
-        <Button variant="secondary" onClick={increaseCount}>
+        </Button >
+        <div className="count">{count}</div>
+        <Button 
+              variant="info" 
+              onClick={increaseCount}
+              className="btn-sm count-btn">
           +
         </Button>
       </ButtonGroup>
-      <Button variant="secondary" onClick={onAdd}>
-        Add to cart
+      <Button className="count-cart-btn"
+              onClick={onAdd}>
+          ADD TO CART
       </Button>
     </div>
   );

@@ -8,7 +8,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 //ESTILOS
-import "./index.css";
+import "./index.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

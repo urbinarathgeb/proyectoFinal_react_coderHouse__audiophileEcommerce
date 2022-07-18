@@ -4,12 +4,15 @@ import ItemListContainer from "./components/containers/ItemListContainer/ItemLis
 
 //ESTILOS
 import "./App.css";
+import "./custom.scss";
+import ItemDetailContainer from "./components/containers/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer greeting="Hola, Maxi. Este es el CONTAINER con la prop y este texto es el valor del prop" />
+      <ItemListContainer />
+      <ItemDetailContainer />
     </div>
   );
 }
