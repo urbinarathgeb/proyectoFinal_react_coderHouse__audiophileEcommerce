@@ -8,7 +8,7 @@
     font-size: 0.9375rem;
     font-weight: 500;
     line-height: 1.6rem;
-    opacity: 50%;
+    opacity: 80%;
   }
   &-btn {
     padding: 1rem 2rem !important;
@@ -24,21 +24,10 @@
       object-fit: cover;
     }
   }
-}
-
-@media screen and (min-width: 992px) {
-  .card {
-    flex-direction: row !important;
-    max-height: 380px;
-    max-width: 1080px !important;
+  .category {
     &-img {
-      height: 100%;
-    }
-    &-body {
-      display: flex !important;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      width: 40%;
+      max-width: 330px;
     }
   }
 }

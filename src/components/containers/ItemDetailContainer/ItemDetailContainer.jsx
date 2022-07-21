@@ -1,35 +1,28 @@
+import Container from "react-bootstrap/Container";
+
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Loading from "../../Loading/Loading";
 import ItemDetail from "../../ItemDetail/ItemDetail";
+import { getData } from "../../../helpers/getData";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { productId } = useParams();
 
   useEffect(() => {
     setTimeout(() => {
-      getFetch();
-    }, 2000);
-  }, []);
-
-  const getFetch = async () => {
-    try {
-      const resp = await fetch("data.json");
-      const data = await resp.json();
-      setProduct(data.find((item) => item.id === 3));
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setLoading(false);
-    }
-  };
+      getData()
+        .then((data) => setProduct(data.find((prod) => prod.id === Number(productId))))
+        .catch((err) => console.log(err))
+        .finally(setLoading(false));
+    }, 1200);
+  }, [productId]);
 
   return (
-    <div className="row">
-      <h4 className="mt-5">Item Detail Container</h4>
-      {loading ? <Loading /> : <ItemDetail product={product} key={product.id} />}
-    </div>
-  )
+    <Container fluid>{loading ? <Loading /> : <ItemDetail product={product} key={product.id} />}</Container>
+  );
 };
 
 export default ItemDetailContainer;

@@ -7,23 +7,21 @@ import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
 
 import "./Item.scss";
+import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
-  const { name, description, image, stock } = item;
+  const { name, description, catImgMob, stock, id } = item;
 
   return (
-    <Card className="col-9 col-md-11">
-      <Card.Img
-        src={image.mobile}
-        srcSet={`${image.mobile} 320w,
-                ${image.tablet} 650w,
-                ${image.desktop} 1080w`}
-      />
+    <Card className="mx-auto mt-5 col-12 col-sm-8 col-md-10 flex-md-row">
+      <Card.Img src={catImgMob} className="category-img" />
       <Card.Body>
         <Card.Title className="mb-4">{name.toUpperCase()}</Card.Title>
         <Card.Text className="mb-4">{description}</Card.Text>
-        <Button className="card-btn">SEE PRODUCT</Button>
-        <ItemCount initial={1} stock={stock} product={name} />
+        <Link to={`/detalle/${id}`}>
+          <Button className="card-btn">SEE PRODUCT</Button>
+        </Link>
+        <ItemCount initial={1} stock={stock} name={name} />
       </Card.Body>
     </Card>
   );

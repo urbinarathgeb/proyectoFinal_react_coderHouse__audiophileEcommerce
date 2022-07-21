@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "../../ItemList/ItemList";
 import Loading from "../../Loading/Loading";
+import { useParams } from "react-router-dom";
+import { getData } from "../../../helpers/getData";
 
 //ESTILOS
 import "./ItemListContainer.scss";
@@ -9,24 +11,23 @@ import "./ItemListContainer.scss";
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { productCategory } = useParams();
 
   useEffect(() => {
-    setTimeout(() => {
-      getData();
-    }, 2000);
-  }, []);
-
-  const getData = async () => {
-    try {
-      const resp = await fetch("data.json");
-      const data = await resp.json();
-      setItems(data);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setLoading(false);
+    if (productCategory) {
+      setTimeout(() => {
+        getData()
+          .then((data) => setItems(data.filter((item) => item.category === productCategory)))
+          .finally(setLoading(false));
+      }, 2000);
+    } else {
+      setTimeout(() => {
+        getData()
+          .then((data) => setItems(data))
+          .finally(setLoading(false));
+      }, 2000);
     }
-  };
+  }, [productCategory]);
 
   return <div className="list-container">{loading ? <Loading /> : <ItemList items={items} />}</div>;
 };
