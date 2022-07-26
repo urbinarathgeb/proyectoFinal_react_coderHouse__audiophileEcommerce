@@ -1,10 +1,14 @@
+//BOOTSTRAP
 import Container from "react-bootstrap/Container";
 
-import React, { useState, useEffect } from "react";
+//REACT COMPONENTS
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Loading from "../../Loading/Loading";
-import ItemDetail from "../../ItemDetail/ItemDetail";
-import { getData } from "../../../helpers/getData";
+
+//CUSTOM COMPONENTS
+import Loading from "../../components/Loading/Loading";
+import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import { getData } from "../../helpers/getData";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);
@@ -18,7 +22,7 @@ const ItemDetailContainer = () => {
         .catch((err) => console.log(err))
         .finally(setLoading(false));
     }, 1200);
-  }, [productId]);
+  }, []);
 
   return (
     <Container fluid>{loading ? <Loading /> : <ItemDetail product={product} key={product.id} />}</Container>

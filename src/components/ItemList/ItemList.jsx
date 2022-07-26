@@ -1,7 +1,7 @@
-//COMPONENTES
-import React from "react";
+//CUSTOM COMPONENTS
 import Item from "../Item/Item";
 
+//STYLES
 import "./ItemList.scss";
 
 const ItemList = ({ items }) => {

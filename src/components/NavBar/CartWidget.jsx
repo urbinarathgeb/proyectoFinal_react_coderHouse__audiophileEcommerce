@@ -2,11 +2,13 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-//COMPONENTES
-import React, { useState } from "react";
+//REACT COMPONENTS
+import { useState } from "react";
+
+//CUSTOM COMPONENTS
 import iconCart from "../../assets/icon-cart.svg";
 
-//ESTILOS
+//STYLES
 import "./CartWidget.scss";
 
 function CartWidget() {

@@ -1,11 +1,8 @@
 //BOOTSTRAP
 import Spinner from "react-bootstrap/Spinner";
 
-//COMPONENTES
-import React from "react";
-
-//ESTILOS
-import "./Loading.css";
+//STYLES
+import "./Loading.scss";
 
 const Loading = () => {
   return (

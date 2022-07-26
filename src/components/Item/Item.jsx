@@ -2,12 +2,14 @@
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-//COMPONENTES
-import React from "react";
+//REACT COMPONENTS
+import { Link } from "react-router-dom";
+
+//CUSTOM COMPONENTS
 import ItemCount from "../ItemCount/ItemCount";
 
+//STYLES
 import "./Item.scss";
-import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
   const { name, description, catImgMob, stock, id } = item;
@@ -21,7 +23,7 @@ const Item = ({ item }) => {
         <Link to={`/detalle/${id}`}>
           <Button className="card-btn">SEE PRODUCT</Button>
         </Link>
-        <ItemCount initial={1} stock={stock} name={name} />
+        {/*  <ItemCount initial={1} stock={stock} name={name} /> */}
       </Card.Body>
     </Card>
   );

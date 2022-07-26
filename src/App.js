@@ -1,13 +1,15 @@
+//REACT COMPONENTS
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-//COMPONENTES
+//CUSTOM COMPONENTS
 import NavBar from "./components/NavBar/Navbar";
-import ItemListContainer from "./components/containers/ItemListContainer/ItemListContainer";
+import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
+import CartContainer from "./containers/CartContainer/CartContainer";
 
-//ESTILOS
+//STYLES
 import "./App.css";
 import "./custom.scss";
-import ItemDetailContainer from "./components/containers/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
   return (
@@ -17,8 +19,8 @@ function App() {
         <Routes>
           <Route index path="/" element={<ItemListContainer />} />
           <Route index path="/categoria/:productCategory" element={<ItemListContainer />} />
-
           <Route path="/detalle/:productId" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<CartContainer />} />
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

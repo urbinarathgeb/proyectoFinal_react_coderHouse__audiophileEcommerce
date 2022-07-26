@@ -3,11 +3,14 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-//COMPONENTES
+//REACT COMPONENTS
 import { Link, NavLink } from "react-router-dom";
+
+//CUSTOM COMPONENTS
 import CartWidget from "./CartWidget";
 import logo from "../../logo.svg";
 
+//STYLES
 import "./NavBar.scss";
 
 const NavBar = () => {

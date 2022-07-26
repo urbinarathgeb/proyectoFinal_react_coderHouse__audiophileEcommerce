@@ -1,11 +1,13 @@
-//COMPONENTES
-import React, { useState, useEffect } from "react";
-import ItemList from "../../ItemList/ItemList";
-import Loading from "../../Loading/Loading";
+//REACT COMPONENTS
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getData } from "../../../helpers/getData";
 
-//ESTILOS
+//CUSTOM COMPONENTS
+import { getData } from "../../helpers/getData";
+import ItemList from "../../components/ItemList/ItemList";
+import Loading from "../../components/Loading/Loading";
+
+//STYLES
 import "./ItemListContainer.scss";
 
 const ItemListContainer = () => {

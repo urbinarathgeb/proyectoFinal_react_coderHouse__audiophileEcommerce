@@ -1,10 +1,13 @@
+//BOOTSTRAP
 import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
-import React from "react";
+//REACT COMPONENTS
+import { useState } from "react";
+
+//CUSTOM COMPONENTS
 import ItemCount from "../ItemCount/ItemCount";
 
+//STYLES
 import "./ItemDetail.scss";
 
 const ItemDetail = ({ product }) => {
@@ -15,8 +18,6 @@ const ItemDetail = ({ product }) => {
     features,
     stock,
     imgMob,
-    imgTab,
-    imgDesk,
     newProduct,
     boxQuan1,
     boxQuan2,
@@ -31,6 +32,13 @@ const ItemDetail = ({ product }) => {
   } = product;
   const arrival = newProduct && "NEW PRODUCT";
 
+  const [quantity, setQuantity] = useState(null);
+
+  const onAdd = (value, name) => {
+    setQuantity(value);
+    alert(`agregaste ${value} ${name} al carrito`);
+  };
+
   return (
     <>
       <Card className="mx-auto mt-5 col-12 col-sm-8 col-md-10 card-detail">
@@ -41,7 +49,7 @@ const ItemDetail = ({ product }) => {
             <Card.Title>{name}</Card.Title>
             <Card.Text className="mb-2 text-muted text-start">{description}</Card.Text>
             <Card.Subtitle className="mb-2">${price}</Card.Subtitle>
-            <ItemCount initial={1} stock={stock} name={name} />
+            <ItemCount initial={1} stock={stock} name={name} onAdd={onAdd} />
           </Card.Body>
         </div>
       </Card>
