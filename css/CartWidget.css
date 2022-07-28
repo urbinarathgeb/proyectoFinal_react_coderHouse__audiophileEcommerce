@@ -1,0 +1,17 @@
+.iconCart-container:hover {
+  cursor: pointer;
+}
+
+.modal-dialog {
+  margin-top: 60px !important;
+  margin-right: 12px !important;
+}
+
+.modal-header {
+  border: none !important;
+}
+
+.modal-footer {
+  border: none !important;
+}
+/*# sourceMappingURL=CartWidget.css.map */

@@ -15,7 +15,7 @@ const ItemCount = ({ initial, stock, name, onAdd }) => {
 
   const handleState = () => {
     setActiveState("checkout");
-    onAdd(count, name);
+    onAdd(count);
   };
 
   const increaseCount = () => {

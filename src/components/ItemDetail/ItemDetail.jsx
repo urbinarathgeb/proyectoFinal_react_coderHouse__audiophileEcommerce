@@ -6,6 +6,7 @@ import { useState } from "react";
 
 //CUSTOM COMPONENTS
 import ItemCount from "../ItemCount/ItemCount";
+import { useCartContext } from "../../context/CartContext";
 
 //STYLES
 import "./ItemDetail.scss";
@@ -17,8 +18,10 @@ const ItemDetail = ({ product }) => {
     description,
     features,
     stock,
-    imgMob,
+    image,
     newProduct,
+    includes,
+    imgMob,
     boxQuan1,
     boxQuan2,
     boxQuan3,
@@ -31,12 +34,10 @@ const ItemDetail = ({ product }) => {
     boxItem5,
   } = product;
   const arrival = newProduct && "NEW PRODUCT";
+  const { addCart } = useCartContext(); //UseContext + CartContext
 
-  const [quantity, setQuantity] = useState(null);
-
-  const onAdd = (value, name) => {
-    setQuantity(value);
-    alert(`agregaste ${value} ${name} al carrito`);
+  const onAdd = (count) => {
+    addCart(product, count);
   };
 
   return (
@@ -61,6 +62,7 @@ const ItemDetail = ({ product }) => {
 
       <Card.Body className="mx-auto mb-5 col-12 col-sm-8 col-md-10 detail-box">
         <h3 className="detail-title">IN THE BOX</h3>
+
         <div className="detail-box-container">
           <p className="detail-box-quant">{boxQuan1}</p>
           <p className="detail-box-item text-muted ">{boxItem1}</p>

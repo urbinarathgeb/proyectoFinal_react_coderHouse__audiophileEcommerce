@@ -1,0 +1,31 @@
+.card-title {
+  text-align: center;
+  font-size: 1.75rem !important;
+  line-height: 2.375rem !important;
+}
+
+.card-text {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.6rem;
+  opacity: 80%;
+}
+
+.card-btn {
+  padding: 1rem 2rem !important;
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 0.8125rem !important;
+}
+
+@media screen and (min-width: 768px) {
+  .card-img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .category-img {
+    width: 40%;
+    max-width: 330px;
+  }
+}
+/*# sourceMappingURL=Item.css.map */

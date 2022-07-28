@@ -12,7 +12,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import "./Item.scss";
 
 const Item = ({ item }) => {
-  const { name, description, catImgMob, stock, id } = item;
+  const { name, description, categoryImg, stock, id, catImgMob } = item;
 
   return (
     <Card className="mx-auto mt-5 col-12 col-sm-8 col-md-10 flex-md-row">

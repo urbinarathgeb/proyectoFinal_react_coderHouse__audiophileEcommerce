@@ -1,0 +1,44 @@
+.count-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 38px;
+}
+
+.count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  height: 100%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #000000;
+  background-color: #f1f1f1;
+}
+
+.count-btn {
+  width: 30px;
+  height: 38px;
+  font-weight: bold;
+}
+
+.count-btn:hover {
+  color: #d87d4a !important;
+}
+
+.count-cart-btn {
+  height: 38px !important;
+  min-width: 140px !important;
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 0.8125rem !important;
+}
+/*# sourceMappingURL=ItemCount.css.map */
