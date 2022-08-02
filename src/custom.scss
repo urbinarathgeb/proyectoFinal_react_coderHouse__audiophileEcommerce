@@ -52,3 +52,14 @@ $btn-padding-x-sm: 0;
 
 
 @import "~bootstrap/scss/bootstrap";
+
+.principalBtn {
+    width: 100%;
+    color: white;
+    padding: 1rem 2rem ;
+    font-weight: bold ;
+    font-size: 0.8125rem;
+    &:hover{
+        color: white;
+    }
+}

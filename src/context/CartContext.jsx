@@ -17,7 +17,14 @@ const CartContextProvider = ({ children }) => {
       newCart.splice(index, 1, newProduct);
       setCartList([...newCart]);
     } else {
-      let newProduct = { id: product.id, name: product.name, price: product.price, qty };
+      let newProduct = {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        img: product.cartImg,
+        stock: product.stock,
+        qty,
+      };
       setCartList([...cartList, newProduct]);
     }
   };
@@ -31,6 +38,30 @@ const CartContextProvider = ({ children }) => {
     setCartList([]);
   };
 
+  const addItemFromCount = (product) => {
+    if (product.qty >= 1 && product.qty < product.stock) {
+      let index = cartList.findIndex((ele) => ele.id === product.id);
+      let newProduct = cartList[index];
+      let newCart = [...cartList];
+      newProduct.qty = newProduct.qty + 1;
+      newCart.splice(index, 1, newProduct);
+      setCartList([...newCart]);
+    }
+  };
+
+  const removeItemFromCount = (product) => {
+    if (product.qty > 1) {
+      let index = cartList.findIndex((ele) => ele.id === product.id);
+      let newProduct = cartList[index];
+      let newCart = [...cartList];
+      newProduct.qty = newProduct.qty - 1;
+      newCart.splice(index, 1, newProduct);
+      setCartList([...newCart]);
+    }
+  };
+
+  console.log(cartList);
+
   return (
     <CartContext.Provider
       value={{
@@ -38,6 +69,8 @@ const CartContextProvider = ({ children }) => {
         addCart,
         removeItemCart,
         clearCart,
+        addItemFromCount,
+        removeItemFromCount,
       }}
     >
       {children}

@@ -1,54 +1,67 @@
 //BOOTSTRAP
 import Button from "react-bootstrap/Button";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Modal from "react-bootstrap/Modal";
+import Table from "react-bootstrap/Table";
 
 //REACT COMPONENTS
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 //CUSTOM COMPONENTS
 import iconCart from "../../assets/icon-cart.svg";
 import { useCartContext } from "../../context/CartContext";
+import CartItem from "../../components/CartItem/CartItem";
+import CartTotal from "../CartTotal/CartTotal";
 
 //STYLES
 import "./CartWidget.scss";
 
 function CartWidget() {
   const [show, setShow] = useState(false);
-  const { cartList, removeItemCart, clearCart } = useCartContext(); //UseContext + CartContext
+  const { cartList, clearCart } = useCartContext(); //UseContext + CartContext
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  let totalQty = 0;
+
+  cartList.map((prod) => (totalQty = totalQty + prod.qty));
 
   return (
     <>
       <div onClick={handleShow} className="iconCart-container">
         <img src={iconCart} alt="Carrito tienda" />
+        {totalQty > 0 && <h6 className="quatityCartItems">{totalQty}</h6>}
       </div>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Carrito</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {cartList.map((prod) => (
-            <ul key={prod.id}>
-              <li>{prod.name}</li>
-              <li>{prod.qty}</li>
-              <li>{prod.price}</li>
-              <Button onClick={() => removeItemCart(prod.id)}>Eliminar</Button>
-            </ul>
-          ))}
-        </Modal.Body>
-        <Modal.Footer>
-          <ButtonGroup className="gap-2">
-            <Button variant="primary" className="w-50 count-cart-btn">
-              CHECKOUT
-            </Button>
-            <Button variant="primary" className="w-50 count-cart-btn" onClick={clearCart}>
-              VACIAR CARRO
-            </Button>
-          </ButtonGroup>
-        </Modal.Footer>
-      </Modal>
+
+      {cartList.length === 0 ? (
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Body className="emptyCart-container">
+            <h5>EMPTY CART</h5>
+            <Link to="/">
+              <Button className="principalBtn">CONTINUE SHOPPING</Button>
+            </Link>
+          </Modal.Body>
+        </Modal>
+      ) : (
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header>
+            <Modal.Title>Cart: {totalQty}</Modal.Title>
+            <p onClick={clearCart} className="cartWidget-txtBtn m-0">
+              Remove all
+            </p>
+          </Modal.Header>
+          <Modal.Body>
+            <CartItem />
+          </Modal.Body>
+          <Modal.Footer>
+            <CartTotal />
+            <Link to="/cart">
+              <Button className="principalBtn">
+                GO TO CART
+              </Button>
+            </Link>
+          </Modal.Footer>
+        </Modal>
+      )}
     </>
   );
 }

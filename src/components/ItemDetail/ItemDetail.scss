@@ -6,10 +6,10 @@ $highlight: #d87d4a;
   }
   &-new-txt {
     margin: 8px 0;
-    font-size: 0.875rem;
-    font-weight: 400;
+    font-size: 0.875rem !important;
+    font-weight: 400 !important;
     letter-spacing: 10pt;
-    color: $highlight;
+    color: #d87d4a !important;
   }
 }
 .detail {

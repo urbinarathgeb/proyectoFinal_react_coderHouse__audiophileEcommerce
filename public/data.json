@@ -15,6 +15,7 @@
     "catImgMob": "https://res.cloudinary.com/jurbina/image/upload/v1657653344/audiophile/product-yx1-earphones/mobile/image-category-page-preview_j2hei8.jpg",
     "catImgTab": "https://res.cloudinary.com/jurbina/image/upload/v1657653343/audiophile/product-yx1-earphones/tablet/image-category-page-preview_h24jje.jpg",
     "catImgDesk": "https://res.cloudinary.com/jurbina/image/upload/v1657653344/audiophile/product-yx1-earphones/desktop/image-category-page-preview_h1gzs4.jpg",
+    "cartImg": "https://res.cloudinary.com/jurbina/image/upload/v1659389695/audiophile/cart/image-yx1-earphones_hegllz.jpg",
 
     "boxQuan1": "2x",
     "boxItem1": "Earphone unit",
@@ -47,6 +48,7 @@
     "catImgMob": "https://res.cloudinary.com/jurbina/image/upload/v1657653340/audiophile/product-xx59-headphones/mobile/image-category-page-preview_ms7qju.jpg",
     "catImgTab": "https://res.cloudinary.com/jurbina/image/upload/v1657653339/audiophile/product-xx59-headphones/tablet/image-category-page-preview_sv0rdl.jpg",
     "catImgDesk": "https://res.cloudinary.com/jurbina/image/upload/v1657653340/audiophile/product-xx59-headphones/desktop/image-category-page-preview_vlsosm.jpg",
+    "cartImg": "https://res.cloudinary.com/jurbina/image/upload/v1659389695/audiophile/cart/image-xx59-headphones_syk8yi.jpg",
 
     "boxQuan1": "1x",
     "boxItem1": "Headphone unit",
@@ -76,6 +78,7 @@
     "catImgMob": "https://res.cloudinary.com/jurbina/image/upload/v1657653341/audiophile/product-xx99-mark-one-headphones/mobile/image-category-page-preview_glw79r.jpg",
     "catImgTab": "https://res.cloudinary.com/jurbina/image/upload/v1657653341/audiophile/product-xx99-mark-one-headphones/tablet/image-category-page-preview_zoej5y.jpg",
     "catImgDesk": "https://res.cloudinary.com/jurbina/image/upload/v1657653341/audiophile/product-xx99-mark-one-headphones/desktop/image-category-page-preview_p2dko2.jpg",
+    "cartImg": "https://res.cloudinary.com/jurbina/image/upload/v1659389695/audiophile/cart/image-xx99-mark-one-headphones_a70utr.jpg",
 
     "boxQuan1": "1x",
     "boxItem1": "Headphone unit",
@@ -105,6 +108,7 @@
     "catImgMob": "https://res.cloudinary.com/jurbina/image/upload/v1657653343/audiophile/product-xx99-mark-two-headphones/mobile/image-category-page-preview_tewapi.jpg",
     "catImgTab": "https://res.cloudinary.com/jurbina/image/upload/v1657653342/audiophile/product-xx99-mark-two-headphones/tablet/image-category-page-preview_qexfad.jpg",
     "catImgDesk": "https://res.cloudinary.com/jurbina/image/upload/v1657653342/audiophile/product-xx99-mark-two-headphones/desktop/image-category-page-preview_cx8bpb.jpg",
+    "cartImg": "https://res.cloudinary.com/jurbina/image/upload/v1659389695/audiophile/cart/image-xx99-mark-two-headphones_z0wo3b.jpg",
 
     "boxQuan1": "1x",
     "boxItem1": "Headphone unit",
@@ -137,6 +141,7 @@
     "catImgMob": "https://res.cloudinary.com/jurbina/image/upload/v1657653346/audiophile/product-zx7-speaker/mobile/image-category-page-preview_qpqznx.jpg",
     "catImgTab": "https://res.cloudinary.com/jurbina/image/upload/v1657653345/audiophile/product-zx7-speaker/tablet/image-category-page-preview_rixuxl.jpg",
     "catImgDesk": "https://res.cloudinary.com/jurbina/image/upload/v1657653345/audiophile/product-zx7-speaker/desktop/image-category-page-preview_an9ecg.jpg",
+    "cartImg": "https://res.cloudinary.com/jurbina/image/upload/v1659389695/audiophile/cart/image-zx7-speaker_gyfzca.jpg",
 
     "boxQuan1": "2x",
     "boxItem1": "Speaker unit",
@@ -169,6 +174,7 @@
     "catImgMob": "https://res.cloudinary.com/jurbina/image/upload/v1657653347/audiophile/product-zx9-speaker/mobile/image-category-page-preview_mqzizn.jpg",
     "catImgTab": "https://res.cloudinary.com/jurbina/image/upload/v1657653346/audiophile/product-zx9-speaker/tablet/image-category-page-preview_ddg5sg.jpg",
     "catImgDesk": "https://res.cloudinary.com/jurbina/image/upload/v1657653347/audiophile/product-zx9-speaker/desktop/image-category-page-preview_hmt5sf.jpg",
+    "cartImg": "https://res.cloudinary.com/jurbina/image/upload/v1659389695/audiophile/cart/image-zx9-speaker_qwqsr5.jpg",
 
     "boxQuan1": "2x",
     "boxItem1": "Speaker unit",

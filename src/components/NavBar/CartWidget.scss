@@ -1,5 +1,9 @@
-.iconCart-container:hover {
-  cursor: pointer;
+$highlight: #d87d4a;
+.iconCart-container {
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .modal-dialog {
@@ -13,4 +17,37 @@
 
 .modal-footer {
   border: none !important;
+}
+
+.quatityCartItems {
+  margin: 0;
+  padding: 2px 7px;
+  font-size: 0.7rem;
+  color: white;
+  text-align: center;
+  background-color: $highlight;
+  border-radius: 10px;
+  position: absolute;
+  top: -12px;
+  right: -19px;
+}
+
+.cartWidget-txtBtn {
+  &:hover {
+    cursor:pointer;
+    text-decoration: underline;
+  }
+}
+
+///////
+
+.emptyCart{
+  &-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+
+  }
 }

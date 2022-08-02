@@ -14,8 +14,8 @@ const ItemCount = ({ initial, stock, name, onAdd }) => {
   const [count, setCount] = useState(initial);
 
   const handleState = () => {
-    setActiveState("checkout");
     onAdd(count);
+    setActiveState("checkout");
   };
 
   const increaseCount = () => {
