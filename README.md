@@ -16,3 +16,4 @@ Para correr el proyecto de forma local utiliza el comando `npm start`
 
 - React-Bootstrap
 - React-Router-Dom
+- Firebase

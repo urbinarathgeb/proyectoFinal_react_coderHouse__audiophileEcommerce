@@ -12,27 +12,7 @@ import { useCartContext } from "../../context/CartContext";
 import "./ItemDetail.scss";
 
 const ItemDetail = ({ product }) => {
-  const {
-    name,
-    price,
-    description,
-    features,
-    stock,
-    image,
-    newProduct,
-    includes,
-    imgMob,
-    boxQuan1,
-    boxQuan2,
-    boxQuan3,
-    boxQuan4,
-    boxQuan5,
-    boxItem1,
-    boxItem2,
-    boxItem3,
-    boxItem4,
-    boxItem5,
-  } = product;
+  const { name, price, description, features, stock, newProduct, image, includes } = product;
   const arrival = newProduct && "NEW PRODUCT";
   const { addCart } = useCartContext(); //UseContext + CartContext
 
@@ -44,7 +24,8 @@ const ItemDetail = ({ product }) => {
     <>
       <Card className="mx-auto mt-5 col-12 col-sm-8 col-md-10 card-detail">
         <div className="d-flex flex-column flex-md-row">
-          <Card.Img src={imgMob} className="p-3 detail-img" />
+          <Card.Img src={image?.mobile} className="p-3 detail-img" />
+
           <Card.Body className="d-flex flex-column align-items-start justify-content-md-center">
             <Card.Subtitle className="card-new-txt">{arrival}</Card.Subtitle>
             <Card.Title>{name}</Card.Title>
@@ -64,16 +45,16 @@ const ItemDetail = ({ product }) => {
         <h3 className="detail-title">IN THE BOX</h3>
 
         <div className="detail-box-container">
-          <p className="detail-box-quant">{boxQuan1}</p>
-          <p className="detail-box-item text-muted ">{boxItem1}</p>
-          <p className="detail-box-quant">{boxQuan2}</p>
-          <p className="detail-box-item text-muted ">{boxItem2}</p>
-          <p className="detail-box-quant">{boxQuan3}</p>
-          <p className="detail-box-item text-muted ">{boxItem3}</p>
-          <p className="detail-box-quant">{boxQuan4}</p>
-          <p className="detail-box-item text-muted ">{boxItem4}</p>
-          <p className="detail-box-quant">{boxQuan5}</p>
-          <p className="detail-box-item text-muted ">{boxItem5}</p>
+          <p className="detail-box-quant">{includes[0]?.quantity}</p>
+          <p className="detail-box-item text-muted ">{product.includes[0]?.item}</p>
+          <p className="detail-box-quant">{product.includes[1]?.quantity}</p>
+          <p className="detail-box-item text-muted ">{product.includes[1]?.item}</p>
+          <p className="detail-box-quant">{product.includes[2]?.quantity}</p>
+          <p className="detail-box-item text-muted ">{product.includes[2]?.item}</p>
+          <p className="detail-box-quant">{product.includes[3]?.quantity}</p>
+          <p className="detail-box-item text-muted ">{product.includes[3]?.item}</p>
+          <p className="detail-box-quant">{product.includes[4]?.quantity}</p>
+          <p className="detail-box-item text-muted ">{product.includes[4]?.item}</p>
         </div>
       </Card.Body>
     </>

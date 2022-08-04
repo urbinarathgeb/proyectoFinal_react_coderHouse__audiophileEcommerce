@@ -11,12 +11,12 @@ import ItemCount from "../ItemCount/ItemCount";
 //STYLES
 import "./Item.scss";
 
-const Item = ({ item }) => {
-  const { name, description, categoryImg, stock, id, catImgMob } = item;
+const Item = ({ product }) => {
+  const { name, description, categoryImg, stock, id } = product;
 
   return (
     <Card className="mx-auto mt-5 col-12 col-sm-8 col-md-10 flex-md-row">
-      <Card.Img src={catImgMob} className="category-img" />
+      <Card.Img src={categoryImg.mobile} className="category-img" />
       <Card.Body>
         <Card.Title className="mb-4">{name.toUpperCase()}</Card.Title>
         <Card.Text className="mb-4">{description}</Card.Text>
