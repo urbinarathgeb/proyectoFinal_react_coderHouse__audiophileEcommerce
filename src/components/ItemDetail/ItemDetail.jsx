@@ -20,11 +20,13 @@ const ItemDetail = ({ product }) => {
     addCart(product, count);
   };
 
+  console.log(product.includes[4]);
+
   return (
     <>
       <Card className="mx-auto mt-5 col-12 col-sm-8 col-md-10 card-detail">
         <div className="d-flex flex-column flex-md-row">
-          <Card.Img src={image?.mobile} className="p-3 detail-img" />
+          <Card.Img src={image.mobile} className="p-3 detail-img" />
 
           <Card.Body className="d-flex flex-column align-items-start justify-content-md-center">
             <Card.Subtitle className="card-new-txt">{arrival}</Card.Subtitle>
@@ -45,16 +47,20 @@ const ItemDetail = ({ product }) => {
         <h3 className="detail-title">IN THE BOX</h3>
 
         <div className="detail-box-container">
-          <p className="detail-box-quant">{includes[0]?.quantity}</p>
-          <p className="detail-box-item text-muted ">{product.includes[0]?.item}</p>
-          <p className="detail-box-quant">{product.includes[1]?.quantity}</p>
-          <p className="detail-box-item text-muted ">{product.includes[1]?.item}</p>
-          <p className="detail-box-quant">{product.includes[2]?.quantity}</p>
-          <p className="detail-box-item text-muted ">{product.includes[2]?.item}</p>
-          <p className="detail-box-quant">{product.includes[3]?.quantity}</p>
-          <p className="detail-box-item text-muted ">{product.includes[3]?.item}</p>
-          <p className="detail-box-quant">{product.includes[4]?.quantity}</p>
-          <p className="detail-box-item text-muted ">{product.includes[4]?.item}</p>
+          <p className="detail-box-quant">{includes[0].quantity}</p>
+          <p className="detail-box-item text-muted ">{product.includes[0].item}</p>
+          <p className="detail-box-quant">{product.includes[1].quantity}</p>
+          <p className="detail-box-item text-muted ">{product.includes[1].item}</p>
+          <p className="detail-box-quant">{product.includes[2].quantity}</p>
+          <p className="detail-box-item text-muted ">{product.includes[2].item}</p>
+          <p className="detail-box-quant">{product.includes[3].quantity}</p>
+          <p className="detail-box-item text-muted ">{product.includes[3].item}</p>
+          {product.includes[4] && (
+            <>
+              <p className="detail-box-quant">{product.includes[4].quantity}</p>
+              <p className="detail-box-item text-muted ">{product.includes[4].item}</p>
+            </>
+          )}
         </div>
       </Card.Body>
     </>
