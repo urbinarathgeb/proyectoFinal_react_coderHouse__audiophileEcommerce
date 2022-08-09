@@ -1,7 +1,6 @@
 //BOOTSTRAP
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Table from "react-bootstrap/Table";
 
 //REACT COMPONENTS
 import { useState } from "react";
@@ -55,9 +54,7 @@ function CartWidget() {
           <Modal.Footer>
             <CartTotal />
             <Link to="/cart">
-              <Button className="principalBtn">
-                GO TO CART
-              </Button>
+              <Button className="principalBtn">GO TO CART</Button>
             </Link>
           </Modal.Footer>
         </Modal>

@@ -5,18 +5,19 @@ import Table from "react-bootstrap/Table";
 import { useCartContext } from "../../context/CartContext";
 
 //STYLES
-import "./CartTotal.scss"
+import "./CartTotal.scss";
 
 const CartTotal = () => {
-  const { cartList } = useCartContext(); //UseContext + CartContext
-  let totalPrice = 0;
-  cartList.map((prod) => (totalPrice = totalPrice + prod.qty * prod.price));
+  const { totalPrice } = useCartContext(); //UseContext + CartContext
+
+  let total = totalPrice();
+
   return (
     <Table>
       <tbody>
         <tr>
           <td className="text-start cartTotal-txt">TOTAL</td>
-          <td className="text-end cartTotal-price">${totalPrice}</td>
+          <td className="text-end cartTotal-price">${total}</td>
         </tr>
       </tbody>
     </Table>

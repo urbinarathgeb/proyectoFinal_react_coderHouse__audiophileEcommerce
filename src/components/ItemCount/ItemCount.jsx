@@ -2,6 +2,9 @@
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 
+//SWEET ALERT 2
+import Swal from "sweetalert2";
+
 //REACT COMPONENTS
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -13,6 +16,20 @@ const ItemCount = ({ initial, stock, name, onAdd }) => {
   const [activeState, setActiveState] = useState("addCart");
   const [count, setCount] = useState(initial);
 
+  if (initial <= 0) {
+    return <h6>Producto sin stock.</h6>;
+  }
+  const maxStockAlert = () => {
+    count === stock &&
+      Swal.fire({
+        title: `Sorry!`,
+        html: `<p>We only have <b>${stock} ${name}</b> in stock</p>`,
+        icon: "error",
+        confirmButtonColor: "#d87d4a",
+        timer: 2000,
+      });
+  };
+
   const handleState = () => {
     onAdd(count);
     setActiveState("checkout");
@@ -20,16 +37,11 @@ const ItemCount = ({ initial, stock, name, onAdd }) => {
 
   const increaseCount = () => {
     count >= 0 && count < stock && setCount(count + 1);
-
-    alertMaxStock();
+    maxStockAlert();
   };
 
   const decreaseCount = () => {
     count > 0 && count <= stock && setCount(count - 1);
-  };
-
-  const alertMaxStock = () => {
-    count === stock && alert(`Lo sentimos, solo tenemos ${stock} ${name} en stock`);
   };
 
   return (

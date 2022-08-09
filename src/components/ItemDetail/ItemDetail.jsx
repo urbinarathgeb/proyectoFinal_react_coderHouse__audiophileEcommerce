@@ -1,8 +1,8 @@
 //BOOTSTRAP
 import Card from "react-bootstrap/Card";
 
-//REACT COMPONENTS
-import { useState } from "react";
+//SWEET ALERT 2
+import Swal from "sweetalert2";
 
 //CUSTOM COMPONENTS
 import ItemCount from "../ItemCount/ItemCount";
@@ -15,12 +15,24 @@ const ItemDetail = ({ product }) => {
   const { name, price, description, features, stock, newProduct, image, includes } = product;
   const arrival = newProduct && "NEW PRODUCT";
   const { addCart } = useCartContext(); //UseContext + CartContext
+  let initial = stock >= 1 ? 1 : 0;
+
+  const toastAddProduct = () => {
+    Swal.fire({
+      toast: true,
+      position: "bottom-end",
+      showConfirmButton: false,
+      timer: 2000,
+      icon: "success",
+      iconColor: "#d87d4a",
+      title: `Added ${product.name}`,
+    });
+  };
 
   const onAdd = (count) => {
     addCart(product, count);
+    toastAddProduct();
   };
-
-  console.log(product.includes[4]);
 
   return (
     <>
@@ -33,7 +45,7 @@ const ItemDetail = ({ product }) => {
             <Card.Title>{name}</Card.Title>
             <Card.Text className="mb-2 text-muted text-start">{description}</Card.Text>
             <Card.Subtitle className="mb-2">${price}</Card.Subtitle>
-            <ItemCount initial={1} stock={stock} name={name} onAdd={onAdd} />
+            <ItemCount initial={initial} stock={stock} name={name} onAdd={onAdd} />
           </Card.Body>
         </div>
       </Card>

@@ -4,12 +4,12 @@ import Button from "react-bootstrap/Button";
 
 //REACT COMPONENTS
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 //CUSTOM COMPONENTS
 import CartItem from "../../components/CartItem/CartItem";
 import CartTotal from "../../components/CartTotal/CartTotal";
 import { useCartContext } from "../../context/CartContext";
+import OrderForm from "../../components/OrderForm/OrderForm";
 
 const CartContainer = () => {
   const { cartList } = useCartContext(); //UseContext + CartContext
@@ -17,7 +17,7 @@ const CartContainer = () => {
   if (cartList.length === 0) {
     return (
       <Container fluid className="emptyCart-container justify-content-end">
-        <div >
+        <div>
           <h5>EMPTY CART</h5>
           <Link to="/">
             <Button className="principalBtn">CONTINUE SHOPPING</Button>
@@ -30,6 +30,7 @@ const CartContainer = () => {
     <Container fluid>
       <CartItem />
       <CartTotal />
+      <OrderForm />
     </Container>
   );
 };
