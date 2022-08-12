@@ -1,23 +1,22 @@
-//BOOTSTRAP
-import "bootstrap/dist/css/bootstrap.min.css";
+// BOOTSTRAP
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-//COMPONENTES
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import {initFirebase} from "./firebase/config"
+// COMPONENTES
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { initFirebase } from './firebase/config';
 
-//ESTILOS
-import "./index.scss";
-
+// ESTILOS
+import './index.scss';
 
 initFirebase();
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  //<React.StrictMode>
-  <App />
-  //</React.StrictMode>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
 
 reportWebVitals();

@@ -34,20 +34,19 @@ $highlight: #d87d4a;
 
 .cartWidget-txtBtn {
   &:hover {
-    cursor:pointer;
+    cursor: pointer;
     text-decoration: underline;
   }
 }
 
 ///////
 
-.emptyCart{
-  &-container{
+.emptyCart {
+  &-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 50vh;
-
   }
 }

@@ -1,5 +1,5 @@
-//REACT COMPONENTS
-import { createContext, useContext, useState } from "react";
+// REACT COMPONENTS
+import { createContext, useContext, useState } from 'react';
 
 const CartContext = createContext([]);
 
@@ -9,15 +9,15 @@ const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
 
   const addCart = (product, qty) => {
-    if (cartList.some((ele) => ele.id === product.id)) {
-      let index = cartList.findIndex((ele) => ele.id === product.id);
-      let newProduct = cartList[index];
-      let newCart = [...cartList];
+    if (cartList.some(ele => ele.id === product.id)) {
+      const index = cartList.findIndex(ele => ele.id === product.id);
+      const newProduct = cartList[index];
+      const newCart = [...cartList];
       newProduct.qty = newProduct.qty + qty;
       newCart.splice(index, 1, newProduct);
       setCartList([...newCart]);
     } else {
-      let newProduct = {
+      const newProduct = {
         id: product.id,
         name: product.name,
         price: product.price,
@@ -29,8 +29,8 @@ const CartContextProvider = ({ children }) => {
     }
   };
 
-  const removeItemCart = (id) => {
-    let newCart = cartList.filter((ele) => ele.id !== id);
+  const removeItemCart = id => {
+    const newCart = cartList.filter(ele => ele.id !== id);
     setCartList([...newCart]);
   };
 
@@ -38,22 +38,22 @@ const CartContextProvider = ({ children }) => {
     setCartList([]);
   };
 
-  const addItemFromCount = (product) => {
+  const addItemFromCount = product => {
     if (product.qty >= 1 && product.qty < product.stock) {
-      let index = cartList.findIndex((ele) => ele.id === product.id);
-      let newProduct = cartList[index];
-      let newCart = [...cartList];
+      const index = cartList.findIndex(ele => ele.id === product.id);
+      const newProduct = cartList[index];
+      const newCart = [...cartList];
       newProduct.qty = newProduct.qty + 1;
       newCart.splice(index, 1, newProduct);
       setCartList([...newCart]);
     }
   };
 
-  const removeItemFromCount = (product) => {
+  const removeItemFromCount = product => {
     if (product.qty > 1) {
-      let index = cartList.findIndex((ele) => ele.id === product.id);
-      let newProduct = cartList[index];
-      let newCart = [...cartList];
+      const index = cartList.findIndex(ele => ele.id === product.id);
+      const newProduct = cartList[index];
+      const newCart = [...cartList];
       newProduct.qty = newProduct.qty - 1;
       newCart.splice(index, 1, newProduct);
       setCartList([...newCart]);
@@ -61,7 +61,10 @@ const CartContextProvider = ({ children }) => {
   };
 
   const totalPrice = () => {
-    return cartList.reduce((accumPrice, prod) => (accumPrice = accumPrice + prod.qty * prod.price), 0);
+    return cartList.reduce(
+      (accumPrice, prod) => (accumPrice = accumPrice + prod.qty * prod.price),
+      0
+    );
   };
 
   return (

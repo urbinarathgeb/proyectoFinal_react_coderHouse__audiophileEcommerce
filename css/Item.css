@@ -21,7 +21,7 @@
 @media screen and (min-width: 768px) {
   .card-img {
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .category-img {
     width: 40%;

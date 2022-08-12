@@ -1,34 +1,53 @@
-//REACT COMPONENTS
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+// REACT COMPONENTS
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-//CUSTOM COMPONENTS
-import NavBar from "./components/NavBar/Navbar";
-import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
-import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
-import CartContainer from "./containers/CartContainer/CartContainer";
-import CartContextProvider from "./context/CartContext";
+// CUSTOM COMPONENTS
+import NavBar from './components/NavBar/Navbar';
+import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
+import CartContainer from './containers/CartContainer/CartContainer';
+import CartContextProvider from './context/CartContext';
+import Footer from './components/Footer/Footer';
 
-//STYLES
-import "./App.css";
-import "./custom.scss";
+// STYLES
+import './App.css';
+import './custom.scss';
 
 function App() {
   return (
-    <BrowserRouter>
-      <CartContextProvider>
-        <div className="App">
+    <div className='App'>
+      <BrowserRouter>
+        <CartContextProvider>
           <NavBar />
           <Routes>
-            <Route index path="/" element={<ItemListContainer />} />
-            <Route index path="/categoria/:productCategory" element={<ItemListContainer />} />
-            <Route path="/detalle/:productId" element={<ItemDetailContainer />} />
-            <Route path="/cart" element={<CartContainer />} />
+            <Route
+              index
+              path='/'
+              element={<ItemListContainer />}
+            />
+            <Route
+              index
+              path='/categoria/:productCategory'
+              element={<ItemListContainer />}
+            />
+            <Route
+              path='/detalle/:productId'
+              element={<ItemDetailContainer />}
+            />
+            <Route
+              path='/cart'
+              element={<CartContainer />}
+            />
 
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route
+              path='*'
+              element={<Navigate to='/' />}
+            />
           </Routes>
-        </div>
-      </CartContextProvider>
-    </BrowserRouter>
+        </CartContextProvider>
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 }
 

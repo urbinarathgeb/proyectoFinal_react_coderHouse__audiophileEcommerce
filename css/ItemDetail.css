@@ -28,9 +28,9 @@
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 7% 93%;
-      grid-template-columns: 7% 93%;
-  -ms-grid-rows: (1fr)[5];
-      grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: 7% 93%;
+  -ms-grid-rows: (1fr) [5];
+  grid-template-rows: repeat(5, 1fr);
   gap: 8px;
   width: 100%;
 }
@@ -38,7 +38,7 @@
 .detail-box-quant {
   margin: 6px 0;
   -ms-grid-column-align: start;
-      justify-self: start;
+  justify-self: start;
   font-weight: bold;
   color: #d87d4a;
 }
@@ -47,7 +47,7 @@
   margin: 6px 0;
   font-weight: 500;
   -ms-grid-column-align: start;
-      justify-self: start;
+  justify-self: start;
 }
 
 @media screen and (min-width: 768px) {
@@ -58,7 +58,8 @@
     width: 40%;
     max-width: 330px;
   }
-  .detail-features, .detail-box {
+  .detail-features,
+  .detail-box {
     max-width: 950px;
   }
 }
