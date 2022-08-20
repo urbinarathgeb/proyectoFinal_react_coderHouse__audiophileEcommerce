@@ -1,13 +1,16 @@
 // BOOTSTRAP
 import { Container } from 'react-bootstrap';
 
+// REACT COMPONENTS
+import { Link } from 'react-router-dom';
+
 // CUSTOM COMPONENTS
 import NavList from '../NavBar/NavList';
 import SocialNav from './SocialNav';
 import logo from '../../logo.svg';
 
+// STYLES
 import './Footer.scss';
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (

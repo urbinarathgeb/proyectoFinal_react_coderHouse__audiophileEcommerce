@@ -1,23 +1,38 @@
-# Proyecto e-commerce: **Audiophile**
+# **Audiophile**
+## e-commerce project
 
-![gif](https://res.cloudinary.com/jurbina/image/upload/v1658373035/audiophile/audiophile-demo_mvwitq.gif)
+## [_Click me for live demo_](https://jotaurbina.github.io/proyectoFinal_react_coderHouse__audiophileEcommerce/)
 
-Este proyecto está siendo realizado a lo largo del curso de React JS de CoderHouse, durante julio-agosto de 2022.
 
-### Getting Started:
+### Initialized with [Create React App](https://github.com/facebook/create-react-app).
+### React v18.2.0
 
-React v18.2.0
 
-Inicializado con [Create React App](https://github.com/facebook/create-react-app).
+This project was carried out during the React JS course at CoderHouse, between July-August of 2022.
 
-Descarga o clona el proyecto y desde la terminal usa el comando `npm install`
+### **Desktop preview**
+![gif](https://res.cloudinary.com/jurbina/image/upload/v1661017846/audiophile/dekstopDemo_ix66kb.gif)
 
-Para correr el proyecto de forma local utiliza el comando `npm start`
+### **Mobile preview**
+![gif](https://res.cloudinary.com/jurbina/image/upload/v1661018683/audiophile/mobileDemo_1_qrgbqw.gif)
 
-### Librerías utilizadas:
+## **Getting Started:**
 
-- React-Bootstrap v2.4.0
-- React-Router-Dom v6.3.0
-- Firebase v9.9.1
-- React-hook-form v7.34.0
-- sweetalert2 v11.4.26
+1. Download or clone the project and from the terminal use the command `npm install`
+
+2. To run locally, use the command `npm start`
+
+## Libraries used:
+
+- ### React-Bootstrap v2.4.0
+  #### _For layout, styles and some components._
+- ### React-Bootstrap-Icons v1.8.4
+  #### _For icons components._
+- ### React-Router-Dom v6.3.0
+  #### _For app routing._
+- ### Firebase v9.9.1
+  #### _For databases storage of products and buyers._
+- ### React-hook-form v7.34.0
+  #### _For data capture and form validation._
+- ### SweetAlert2 v11.4.26
+  #### _For custom alerts of purchase, stock limit and product added to cart._

@@ -1,9 +1,7 @@
 // BOOTSTRAP
-
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
-// SWEET ALERT 2
-// import Swal from 'sweetalert2';
+// HELPERS - SWEET ALERT
 import { maxStockAlert } from '../../helpers/sweetAlertFunctions';
 
 // REACT COMPONENTS

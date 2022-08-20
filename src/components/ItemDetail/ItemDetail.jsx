@@ -1,13 +1,13 @@
 // BOOTSTRAP
 import Card from 'react-bootstrap/Card';
 
+// HELPERS - SWEET ALERT
+import { toastAddProduct } from '../../helpers/sweetAlertFunctions';
+
 // CUSTOM COMPONENTS
 import ItemCount from '../ItemCount/ItemCount';
 import { useCartContext } from '../../context/CartContext';
 import Features from './Features';
-
-// HELPERS - SWEET ALERT
-import { toastAddProduct } from '../../helpers/sweetAlertFunctions';
 
 // STYLES
 import './ItemDetail.scss';
