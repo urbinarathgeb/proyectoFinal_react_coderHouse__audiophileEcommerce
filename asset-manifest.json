@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/proyectoFinal_react_coderHouse__audiophileEcommerce/static/css/main.ea66d8b1.css",
+    "main.js": "/proyectoFinal_react_coderHouse__audiophileEcommerce/static/js/main.b8a954a4.js",
+    "static/js/787.567e03ee.chunk.js": "/proyectoFinal_react_coderHouse__audiophileEcommerce/static/js/787.567e03ee.chunk.js",
+    "static/media/logo.svg": "/proyectoFinal_react_coderHouse__audiophileEcommerce/static/media/logo.e03974f8eeb36e51813ca6f10681acdc.svg",
+    "static/media/icon-cart.svg": "/proyectoFinal_react_coderHouse__audiophileEcommerce/static/media/icon-cart.5e1893a62995fc7b443abe7bee68063e.svg",
+    "index.html": "/proyectoFinal_react_coderHouse__audiophileEcommerce/index.html",
+    "main.ea66d8b1.css.map": "/proyectoFinal_react_coderHouse__audiophileEcommerce/static/css/main.ea66d8b1.css.map",
+    "main.b8a954a4.js.map": "/proyectoFinal_react_coderHouse__audiophileEcommerce/static/js/main.b8a954a4.js.map",
+    "787.567e03ee.chunk.js.map": "/proyectoFinal_react_coderHouse__audiophileEcommerce/static/js/787.567e03ee.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea66d8b1.css",
+    "static/js/main.b8a954a4.js"
+  ]
+}
