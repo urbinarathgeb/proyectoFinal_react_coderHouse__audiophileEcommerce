@@ -1,0 +1,24 @@
+.form {
+  &-container {
+    background-color: white;
+    border-radius: 15px;
+    & > label {
+      width: 100%;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    & > input {
+      height: 56px;
+      font-size: 0.875rem;
+      font-weight: 700x;
+      border-radius: 15px;
+      padding-left: 24px;
+      &:focus {
+        border-color: rgb(216, 125, 74);
+        box-shadow: 0 0 0 0.25rem rgba(216, 125, 74, 0.25);
+      }
+    }
+  }
+}

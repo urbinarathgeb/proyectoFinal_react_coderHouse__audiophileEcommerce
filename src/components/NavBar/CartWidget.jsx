@@ -1,5 +1,4 @@
 // BOOTSTRAP
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 // REACT COMPONENTS
@@ -34,7 +33,7 @@ function CartWidget() {
           src={iconCart}
           alt='Carrito tienda'
         />
-        {totalQty > 0 && <h6 className='quatityCartItems'>{totalQty}</h6>}
+        {totalQty > 0 && <h6 className='quantityCartItems'>{totalQty}</h6>}
       </div>
 
       {cartList.length === 0 ? (
@@ -44,8 +43,8 @@ function CartWidget() {
         >
           <Modal.Body className='emptyCart-container'>
             <h5>EMPTY CART</h5>
-            <Link to='/'>
-              <Button className='principalBtn'>CONTINUE SHOPPING</Button>
+            <Link to='/store'>
+              <button className='btn--orange'>CONTINUE SHOPPING</button>
             </Link>
           </Modal.Body>
         </Modal>
@@ -69,7 +68,7 @@ function CartWidget() {
           <Modal.Footer>
             <CartTotal />
             <Link to='/cart'>
-              <Button className='principalBtn'>GO TO CART</Button>
+              <button className='btn--orange'>CHECKOUT</button>
             </Link>
           </Modal.Footer>
         </Modal>

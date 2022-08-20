@@ -10,27 +10,8 @@ $leadText: #000000;
   &-container {
     display: flex;
     width: 100%;
-    height: 38px;
   }
-  & {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 100%;
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: $leadText;
-    background-color: $background;
-  }
-  &-btn {
-    width: 30px;
-    height: 38px;
-    font-weight: bold;
-    &:hover {
-      color: $highlight !important;
-    }
-  }
+
   &-cart-btn {
     height: 38px !important;
     min-width: 140px !important;

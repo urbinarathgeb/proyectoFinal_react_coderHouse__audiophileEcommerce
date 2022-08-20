@@ -6,26 +6,26 @@ import NavList from '../NavBar/NavList';
 import SocialNav from './SocialNav';
 import logo from '../../logo.svg';
 
+import './Footer.scss';
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return (
     <Container
       fluid
-      className='mx-0 d-flex flex-column justify-content-between'
-      style={{
-        backgroundColor: 'black',
-        height: '20vh',
-        position: 'relative',
-        bottom: '0px',
-      }}
+      className='footer-container d-flex flex-column justify-content-evenly align-items-center align-items-md-start  py-3'
     >
-      <img
-        src={logo}
-        style={{
-          width: '120px',
-        }}
-      />
+      <Link to='/'>
+        <img
+          src={logo}
+          className='m-3'
+          style={{
+            width: '120px',
+          }}
+        />
+      </Link>
       <NavList />
-      <p className='text-start'>
+      <p className='footer-text my-3 ms-md-3 text-md-start'>
         Audiophile is an all in one stop to fulfill your audio needs. We&apos;re
         a small team of music lovers and sound specialists who are devoted to
         helping you get the most out of personal audio. Come and visit our demo

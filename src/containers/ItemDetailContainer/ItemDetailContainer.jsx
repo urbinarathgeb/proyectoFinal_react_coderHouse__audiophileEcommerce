@@ -1,6 +1,3 @@
-// BOOTSTRAP
-import Container from 'react-bootstrap/Container';
-
 // FIREBASE
 import { doc, getDoc, getFirestore } from 'firebase/firestore';
 
@@ -11,6 +8,9 @@ import { useParams } from 'react-router-dom';
 // CUSTOM COMPONENTS
 import Loading from '../../components/Loading/Loading';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
+import AboutUs from '../../components/AboutUs/AboutUs';
+import Gallery from '../../components/Gallery/Gallery';
+import Footer from '../../components/Footer/Footer';
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     const db = getFirestore();
-    const queryProduct = doc(db, 'productos', productId);
+    const queryProduct = doc(db, 'products', productId);
     getDoc(queryProduct)
       .then(resp => {
         setProduct({ id: resp.id, ...resp.data() });
@@ -29,16 +29,21 @@ const ItemDetailContainer = () => {
   }, [productId]);
 
   return (
-    <Container fluid>
+    <section className='d-flex flex-column justify-content-center align-items-center'>
       {loading ? (
         <Loading />
       ) : (
-        <ItemDetail
-          product={product}
-          key={product.id}
-        />
+        <>
+          <ItemDetail
+            product={product}
+            key={product.id}
+          />
+          <Gallery product={product} />
+          <AboutUs />
+          <Footer />
+        </>
       )}
-    </Container>
+    </section>
   );
 };
 

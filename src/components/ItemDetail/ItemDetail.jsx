@@ -1,46 +1,26 @@
 // BOOTSTRAP
 import Card from 'react-bootstrap/Card';
 
-// SWEET ALERT 2
-import Swal from 'sweetalert2';
-
 // CUSTOM COMPONENTS
 import ItemCount from '../ItemCount/ItemCount';
 import { useCartContext } from '../../context/CartContext';
+import Features from './Features';
+
+// HELPERS - SWEET ALERT
+import { toastAddProduct } from '../../helpers/sweetAlertFunctions';
 
 // STYLES
 import './ItemDetail.scss';
 
 const ItemDetail = ({ product }) => {
-  const {
-    name,
-    price,
-    description,
-    features,
-    stock,
-    newProduct,
-    image,
-    includes,
-  } = product;
+  const { name, price, description, stock, newProduct, image } = product;
   const arrival = newProduct && 'NEW PRODUCT';
   const { addCart } = useCartContext(); // UseContext + CartContext
   const initial = stock >= 1 ? 1 : 0;
 
-  const toastAddProduct = () => {
-    Swal.fire({
-      toast: true,
-      position: 'bottom-end',
-      showConfirmButton: false,
-      timer: 2000,
-      icon: 'success',
-      iconColor: '#d87d4a',
-      title: `Added ${product.name}`,
-    });
-  };
-
   const onAdd = count => {
     addCart(product, count);
-    toastAddProduct();
+    toastAddProduct(product); // From helpers/sweetAlertFunctions
   };
 
   return (
@@ -51,7 +31,6 @@ const ItemDetail = ({ product }) => {
             src={image.mobile}
             className='p-3 detail-img'
           />
-
           <Card.Body className='d-flex flex-column align-items-start justify-content-md-center'>
             <Card.Subtitle className='card-new-txt'>{arrival}</Card.Subtitle>
             <Card.Title>{name}</Card.Title>
@@ -69,41 +48,7 @@ const ItemDetail = ({ product }) => {
         </div>
       </Card>
 
-      <Card.Body className='mx-auto mt-3 col-12 col-sm-8 col-md-10 detail-features'>
-        <h3 className='detail-title'>FEATURES</h3>
-        <p className='detail-feature-txt text-muted my-0'>{features}</p>
-      </Card.Body>
-
-      <Card.Body className='mx-auto mb-5 col-12 col-sm-8 col-md-10 detail-box'>
-        <h3 className='detail-title'>IN THE BOX</h3>
-
-        <div className='detail-box-container'>
-          <p className='detail-box-quant'>{includes[0].quantity}</p>
-          <p className='detail-box-item text-muted '>
-            {product.includes[0].item}
-          </p>
-          <p className='detail-box-quant'>{product.includes[1].quantity}</p>
-          <p className='detail-box-item text-muted '>
-            {product.includes[1].item}
-          </p>
-          <p className='detail-box-quant'>{product.includes[2].quantity}</p>
-          <p className='detail-box-item text-muted '>
-            {product.includes[2].item}
-          </p>
-          <p className='detail-box-quant'>{product.includes[3].quantity}</p>
-          <p className='detail-box-item text-muted '>
-            {product.includes[3].item}
-          </p>
-          {product.includes[4] && (
-            <>
-              <p className='detail-box-quant'>{product.includes[4].quantity}</p>
-              <p className='detail-box-item text-muted '>
-                {product.includes[4].item}
-              </p>
-            </>
-          )}
-        </div>
-      </Card.Body>
+      <Features product={product} />
     </>
   );
 };

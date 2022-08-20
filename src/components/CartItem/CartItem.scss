@@ -1,28 +1,34 @@
 .cartItemCard {
   &-img {
-    width: 80px !important;
-    height: 80px;
+    width: 90px !important;
+    height: 90px;
   }
   &-body {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
     align-items: center;
-    height: 80px;
+    height: 90px;
   }
-
   &-name {
     font-weight: bold;
+    text-align: left;
   }
   &-price {
     height: 50%;
-    border: none;
     grid-column-start: 1;
     grid-row-start: 2;
+    text-align: left;
+  }
+  &-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    height: 45px;
   }
   &-btn {
-    border: none !important;
-    padding: 0 !important;
-    height: 21px !important;
+    max-width: 120px;
   }
 }

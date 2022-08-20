@@ -4,15 +4,36 @@ import Nav from 'react-bootstrap/Nav';
 // REACT COMPONENTS
 import { NavLink } from 'react-router-dom';
 
-// CUSTOM COMPONENTS
+// STYYLES
+import './NavList.scss';
 
 const NavList = () => {
   return (
-    <Nav>
-      <NavLink to='/'>CATALOG</NavLink>
-      <NavLink to='/categoria/headphones'>HEADPHONES</NavLink>
-      <NavLink to='/categoria/speakers'>SPEAKERS</NavLink>
-      <NavLink to='/categoria/earphones'>EARPHONES</NavLink>
+    <Nav className='navlist-container mx-3'>
+      <NavLink
+        to='/store'
+        className='navlist-item ms-md-0'
+      >
+        STORE
+      </NavLink>
+      <NavLink
+        to='/category/headphones'
+        className='navlist-item'
+      >
+        HEADPHONES
+      </NavLink>
+      <NavLink
+        to='/category/speakers'
+        className='navlist-item'
+      >
+        SPEAKERS
+      </NavLink>
+      <NavLink
+        to='/category/earphones'
+        className='navlist-item'
+      >
+        EARPHONES
+      </NavLink>
     </Nav>
   );
 };

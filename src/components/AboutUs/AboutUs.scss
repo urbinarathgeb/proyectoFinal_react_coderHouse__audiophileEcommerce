@@ -1,0 +1,53 @@
+.aboutUs {
+  &-container {
+    width: 92%;
+    max-width: 950px;
+    & > picture {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+
+  &-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 2.5rem;
+  }
+  &-text {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 25px;
+    color: black;
+    opacity: 0.5;
+  }
+}
+
+.orange {
+  color: #d87d4a;
+}
+
+//////////////////////////////
+// MEDIA QUERIES 992
+//////////////////////////////
+
+@media screen and (min-width: 992px) {
+  .aboutUs {
+    &-infoContainer {
+      width: 55%;
+      order: 0;
+      align-self: center;
+    }
+
+    &-container > picture {
+      width: 45%;
+      order: 1;
+    }
+  }
+}

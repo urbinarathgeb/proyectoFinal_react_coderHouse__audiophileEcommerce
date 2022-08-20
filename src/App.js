@@ -3,15 +3,14 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // CUSTOM COMPONENTS
 import NavBar from './components/NavBar/Navbar';
+import Home from './components/Home/Home';
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 import CartContainer from './containers/CartContainer/CartContainer';
 import CartContextProvider from './context/CartContext';
-import Footer from './components/Footer/Footer';
 
 // STYLES
-import './App.css';
-import './custom.scss';
+import './App.scss';
 
 function App() {
   return (
@@ -23,15 +22,20 @@ function App() {
             <Route
               index
               path='/'
+              element={<Home />}
+            />
+            <Route
+              index
+              path='/store'
               element={<ItemListContainer />}
             />
             <Route
               index
-              path='/categoria/:productCategory'
+              path='/category/:productCategory'
               element={<ItemListContainer />}
             />
             <Route
-              path='/detalle/:productId'
+              path='/detail/:productId'
               element={<ItemDetailContainer />}
             />
             <Route
@@ -45,7 +49,6 @@ function App() {
             />
           </Routes>
         </CartContextProvider>
-        <Footer />
       </BrowserRouter>
     </div>
   );

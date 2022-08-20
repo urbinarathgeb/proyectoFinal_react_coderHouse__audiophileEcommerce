@@ -1,32 +1,43 @@
 // BOOTSTRAP
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 
 // REACT COMPONENTS
 import { Link } from 'react-router-dom';
-
-// CUSTOM COMPONENTS
-// import ItemCount from '../ItemCount/ItemCount';
 
 // STYLES
 import './Item.scss';
 
 const Item = ({ product }) => {
-  const { name, description, categoryImg, /* stock */ id } = product;
+  const { name, description, categoryImg, id } = product;
 
   return (
-    <Card className='mx-auto mt-5 col-12 col-sm-8 col-md-10 flex-md-row'>
-      <Card.Img
-        src={categoryImg.mobile}
-        className='category-img'
-      />
-      <Card.Body>
-        <Card.Title className='mb-4'>{name.toUpperCase()}</Card.Title>
-        <Card.Text className='mb-4'>{description}</Card.Text>
-        <Link to={`/detalle/${id}`}>
-          <Button className='card-btn'>SEE PRODUCT</Button>
+    <Card className='categoryItem-container pb-4 mx-auto flex-lg-row'>
+      <picture className='p-3'>
+        <source
+          srcSet={categoryImg.desktop}
+          media='(min-width:992px)'
+          className='categoryItem-img'
+        />
+        <source
+          srcSet={categoryImg.tablet}
+          media='(min-width:768px)'
+          className='categoryItem-img'
+        />
+        <img
+          src={categoryImg.mobile}
+          alt=''
+          className='categoryItem-img'
+        />
+      </picture>
+
+      <Card.Body className='categoryItem-infoContainer d-flex flex-column justify-content-center align-items-center'>
+        <Card.Title className='categoryItem-title mb-4 w-75'>
+          {name.toUpperCase()}
+        </Card.Title>
+        <Card.Text className='categoryItem-text mb-4'>{description}</Card.Text>
+        <Link to={`/detail/${id}`}>
+          <button className='btn--orange'>SEE PRODUCT</button>
         </Link>
-        {/*  <ItemCount initial={1} stock={stock} name={name} /> */}
       </Card.Body>
     </Card>
   );

@@ -2,19 +2,19 @@
 import Nav from 'react-bootstrap/Nav';
 import { Facebook, Instagram, Twitter } from 'react-bootstrap-icons';
 
-// REACT COMPONENTS
+// STYLES
+import './SocialNav.scss';
 
 const SocialNav = () => {
   return (
-    <Nav>
+    <Nav className='ms-md-3'>
       <a
         href='https://www.facebook.com'
         target='_blank'
         rel='noreferrer'
       >
         <Facebook
-          color='white'
-          className='mx-2'
+          className='social-icon mx-2 ms-md-0'
           size={22}
         />
       </a>
@@ -24,8 +24,7 @@ const SocialNav = () => {
         rel='noreferrer'
       >
         <Twitter
-          color='white'
-          className='mx-2'
+          className='social-icon mx-2'
           size={22}
         />
       </a>
@@ -35,8 +34,7 @@ const SocialNav = () => {
         rel='noreferrer'
       >
         <Instagram
-          color='white'
-          className='mx-2'
+          className='social-icon mx-2'
           size={22}
         />
       </a>

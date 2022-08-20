@@ -10,6 +10,7 @@ import { initFirebase } from './firebase/config';
 
 // ESTILOS
 import './index.scss';
+import "./global.scss"
 
 initFirebase();
 const root = ReactDOM.createRoot(document.getElementById('root'));

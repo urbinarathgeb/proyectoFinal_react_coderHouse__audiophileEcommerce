@@ -1,0 +1,32 @@
+.cart {
+  &-container {
+    width: 92%;
+  }
+  &-summary {
+    background-color: white;
+    border-radius: 15px;
+  }
+}
+
+//////////////////////////////
+// MEDIA QUERIES 992
+//////////////////////////////
+
+@media screen and (min-width: 992px) {
+  .cart {
+    &-container {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      padding: 0;
+      gap: 1rem;
+    }
+    &-summary {
+      grid-column: 7 / span 4;
+      grid-row-start: 1;
+    }
+    &-form {
+      grid-column: 1 / span 6;
+      margin: 0;
+    }
+  }
+}

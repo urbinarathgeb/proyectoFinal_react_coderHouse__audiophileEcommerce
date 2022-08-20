@@ -1,6 +1,3 @@
-// BOOTSTRAP
-import Button from 'react-bootstrap/Button';
-
 // FIRESTORE
 import {
   addDoc,
@@ -16,14 +13,17 @@ import {
 // REACT-HOOK-FORM
 import { useForm } from 'react-hook-form';
 
-// SWEET ALERT 2
-import Swal from 'sweetalert2';
+// HELPERS - SWEETALERT
+import { orderAlert } from '../../helpers/sweetAlertFunctions';
 
 // CUSTOM COMPONENTS
 import { useCartContext } from '../../context/CartContext';
 
-function OrderForm() {
-  const { cartList, totalPrice, clearCart } = useCartContext(); // UseContext + CartContext
+// STYLES
+import './OrderForm.scss';
+
+const OrderForm = () => {
+  const { cartList, clearCart, totalPrice } = useCartContext(); // UseContext + CartContext
   const {
     register,
     formState: { errors },
@@ -33,16 +33,9 @@ function OrderForm() {
   const order = {};
   const db = getFirestore();
 
-  const orderAlert = (resp, inputData) => {
-    Swal.fire({
-      title: `Thank you, ${inputData.name}. We’re processing your order!`,
-      html: `<p>The code of your order is <b>${resp.id}</b></p>`,
-      icon: 'success',
-      iconColor: '#d87d4a',
-      confirmButtonColor: '#d87d4a',
-    });
-  };
-
+  /*
+   * It creates an object with the buyer's information and the items in the cart
+   */
   const createBuyerObject = inputData => {
     order.buyer = {
       name: inputData.name,
@@ -60,8 +53,12 @@ function OrderForm() {
     order.total = totalPrice();
   };
 
+  /**
+   * It gets all the products in the cart, then it gets all the products in the database, and then it
+   * updates the stock of each product in the database with the quantity of the product in the cart
+   */
   const updateDataWithOrder = async () => {
-    const queryCollectionStock = collection(db, 'productos');
+    const queryCollectionStock = collection(db, 'products');
     const batch = writeBatch(db);
     const queryUpdateStock = query(
       queryCollectionStock,
@@ -79,9 +76,7 @@ function OrderForm() {
         })
       )
     );
-
     batch.commit();
-    console.log('base datos actualiada');
   };
 
   const generateOrder = inputData => {
@@ -96,42 +91,49 @@ function OrderForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(generateOrder)}>
+    <form
+      className='form-container my-4 p-3 my-lg-0'
+      onSubmit={handleSubmit(generateOrder)}
+    >
+      <h3 className='text-start'>CKECKOUT</h3>
+
+      <label htmlFor='name'>Name</label>
       <input
         type='text'
         className='form-control my-2'
-        name='name'
+        id='name'
         placeholder='Enter your name'
         {...register('name', {
           required: true,
         })}
       />
       {errors.name?.type === 'required' && (
-        <p className='alert alert-danger'>Nombre requerido</p>
+        <p className='alert alert-danger'>Name is required</p>
       )}
 
+      <label htmlFor='phoneNumber'>Phone number</label>
       <input
         type='tel'
         className='form-control my-2'
         placeholder='Enter your phone number'
-        name='phoneNumber'
+        id='phoneNumber'
         {...register('phoneNumber', {
           required: true,
           minLength: 9,
         })}
       />
       {errors.phoneNumber?.type === 'required' && (
-        <p className='alert alert-danger'>Teléfono requerido</p>
+        <p className='alert alert-danger'>Phone number is required</p>
       )}
       {errors.phoneNumber?.type === 'minLength' && (
-        <p className='alert alert-danger'>Mínimo 9 números</p>
+        <p className='alert alert-danger'>Enter at least 9 numbers</p>
       )}
 
+      <label htmlFor='email'>Email address</label>
       <input
         type='email'
         className='form-control my-2'
         placeholder='Enter email'
-        name='email'
         id='email'
         {...register('email', {
           required: true,
@@ -139,15 +141,16 @@ function OrderForm() {
         })}
       />
       {errors.email?.type === 'required' && (
-        <p className='alert alert-danger'>Email requerido</p>
+        <p className='alert alert-danger'>Email address is required</p>
       )}
       {errors.email?.type === 'pattern' && (
-        <p className='alert alert-danger'>Formato email incorrecto</p>
+        <p className='alert alert-danger'>Wrong email format</p>
       )}
 
+      <label htmlFor='reEmail'>Re-enter yout email address</label>
       <input
         type='email'
-        name='reEmail'
+        id='reEmail'
         className='form-control my-2'
         placeholder='Re-enter email'
         autoComplete='off'
@@ -157,20 +160,20 @@ function OrderForm() {
         })}
       />
       {errors.reEmail?.type === 'required' && (
-        <p className='alert alert-danger'>Email requerido</p>
+        <p className='alert alert-danger'>Email address is required</p>
       )}
       {errors.reEmail?.type === 'validate' && (
-        <p className='alert alert-danger'>Los emails no coinciden</p>
+        <p className='alert alert-danger'>The entered emails do not match</p>
       )}
 
-      <Button
-        className='principalBtn w-50'
+      <button
+        className='btn--orange w-50 mx-auto'
         type='submit'
       >
         GENERATE ORDER
-      </Button>
+      </button>
     </form>
   );
-}
+};
 
 export default OrderForm;

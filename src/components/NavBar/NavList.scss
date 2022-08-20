@@ -1,0 +1,30 @@
+$highlight: #d87d4a;
+
+.navlist {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  &-item {
+    margin: 4px 8px;
+    color: white;
+    font-size: 0.8125rem;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover {
+      color: $highlight;
+    }
+  }
+}
+//////////////////////////////
+// MEDIA QUERIES 768
+//////////////////////////////
+
+@media screen and (min-width: 768px) {
+  .navlist {
+    &-container {
+      flex-direction: row;
+    }
+  }
+}

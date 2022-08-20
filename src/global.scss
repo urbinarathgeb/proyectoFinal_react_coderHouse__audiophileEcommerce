@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+
+$highlight: #d87d4a;
+$highlightHover: #fbaf85;
+$lightTxt: #101010;
+$background: #f1f1f1;
+$lightBg: #fafafa;
+$darkBgText: #ffffff;
+$leadText: #000000;
+
+@mixin btnStyle($width, $border) {
+  padding: 15px 0;
+  width: $width;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  border: $border;
+}
+
+.btn--orange {
+  @include btnStyle(160px, none);
+  color: white;
+  background-color: $highlight;
+  &:hover {
+    background-color: $highlightHover;
+  }
+  &:active {
+    background-color: $highlightHover;
+  }
+  &:focus {
+    background-color: $highlight;
+    box-shadow: 0 0 0 0.25rem rgba(216, 125, 74, 0.25);
+  }
+  &:active:focus {
+    background-color: $highlightHover;
+    box-shadow: 0 0 0 0.25rem rgba(216, 125, 74, 0.25);
+  }
+}
+
+.btn--black {
+  @include btnStyle(160px, 1px solid black);
+  color: white;
+  background-color: black;
+  &:hover {
+    color: black;
+    background-color: transparent;
+  }
+}
+
+.btn--border {
+  @include btnStyle(160px, 1px solid black);
+  color: black;
+  background-color: transparent;
+  &:hover {
+    color: white;
+    background-color: black;
+  }
+}
+
+.btn--arrow {
+  @include btnStyle(160px, none);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  & > svg {
+    margin-left: 4px;
+    font-size: 10px;
+    font-weight: bolder;
+    stroke: $highlight;
+    fill: $highlight;
+    stroke-width: 1;
+  }
+  &:hover {
+    color: $highlight;
+  }
+}
+a {
+  text-decoration: none;
+}
+
+.btn--count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: $leadText;
+  background-color: $background;
+  border: none;
+  &:hover {
+    background-color: $background;
+    color: $highlight;
+  }
+}
+
+.count {
+  @extend .btn--count;
+  min-width: 30px;
+  width: 100%;
+  &:hover {
+    color: $leadText;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    max-width: 950px;
+    background-color: $lightBg;
+    border: none;
+  }
+}

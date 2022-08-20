@@ -1,5 +1,4 @@
 // BOOTSTRAP
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 // CUSTOM COMPONENTS
@@ -13,7 +12,7 @@ const CartItem = () => {
   const { cartList, removeItemCart } = useCartContext(); // UseContext + CartContext
 
   return (
-    <>
+    <section>
       {cartList.map(prod => (
         <Card
           key={prod.id}
@@ -26,24 +25,24 @@ const CartItem = () => {
           <Card.Body className='cartItemCard-body p-0'>
             <div className='cartItemCard-name px-2'>{prod.name}</div>
             <div className='cartItemCard-price px-2'>${prod.price}</div>
-            <div className='px-2'>
+            <div className='cartItemCard-count px-2'>
               <CartCount
                 qty={prod.qty}
                 prod={prod}
               />
             </div>
             <div className='px-2'>
-              <Button
-                className='principalBtn cartItemCard-btn'
+              <button
+                className='btn--orange cartItemCard-btn p-1 w-100'
                 onClick={() => removeItemCart(prod.id)}
               >
                 REMOVE
-              </Button>
+              </button>
             </div>
           </Card.Body>
         </Card>
       ))}
-    </>
+    </section>
   );
 };
 
